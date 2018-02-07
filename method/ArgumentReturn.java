@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 
+package method;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -33,7 +35,7 @@ public class ArgumentReturn extends HttpServlet {
         String[] data3 = {"500", "600"};
 
         String[] data4 = {""};
-        
+
         if (ID == "100") {
             data4 = data1;
         } else if (ID == "300") {
@@ -51,21 +53,18 @@ public class ArgumentReturn extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
 
             String ID = "100";
-            
-            for (int i = 0; i < 3; i++) {
-                if (ID == "100") {
-                    str(ID);
-                    ID = "300";
-                } else if (ID == "300") {
-                    str(ID);
-                    ID = "500";
-                } else if (ID == "500") {
-                    str(ID);
-                }
 
+            for (int i = 0; i < 3; i++) {
+                
                 String[] datadata = str(ID);
                 for (int j = 0; j < 2; j++) {
                     out.print(datadata[j] + "<BR>");
+                }
+                
+                if (ID == "100") {
+                    ID = "300";
+                } else if (ID == "300") {
+                    ID = "500";
                 }
             }
         }
